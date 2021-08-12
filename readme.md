@@ -1,4 +1,4 @@
-# An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos
+# An End-to-End Visual-Audio Attention Network for Emotion Recognition DMOE
 
 <!-- ### [Project Page](https://github.com/maysonma/VAANet) | [Paper](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364)
 
@@ -13,17 +13,16 @@ Hua Chai,
 Kurt Keutzer<br>
 \*denotes equal contribution -->
 
-This is the official implementation of the paper ["An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos"](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364).
+This is the demo implementation of the paper ["An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos"](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364). [NOT OFFICIAL!!]
 
 ## Citation 
 
 If you use this code, please cite the following:
 ```bibtex
-@inproceedings{Zhao2020AnEV,
-  title={An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos},
-  author={Sicheng Zhao and Yunsheng Ma and Yang Gu and Jufeng Yang and Tengfei Xing and Pengfei Xu and Runbo Hu and Hua Chai and Kurt Keutzer},
-  booktitle={AAAI},
-  year={2020}
+@inproceedings{Robin-WZQ,
+  title={An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos DEMO},
+  author={Wang zhongqi, Wang Jianan,Li Tong},
+  year={2021}
 }
 ```
 
@@ -31,32 +30,37 @@ If you use this code, please cite the following:
 * [PyTorch](http://pytorch.org/) (ver. 0.4+ required)
 * FFmpeg
 * Python3
+* AVL
+* Pyqt5
 
 ## Preparation
 
-### VideoEmotion-8
-* Download the videos [here](https://drive.google.com/drive/u/1/folders/0B5peJ1MHnIWGd3pFbzMyTG5BSGs).
-* Convert from mp4 to jpg files using ```/tools/video2jpg.py```
-* Add n_frames information using ```/tools/n_frames.py```
-* Generate annotation file in json format using ```/tools/ve8_json.py```
-* Convert from mp4 to mp3 files using ```/tools/video2mp3.py```
+### data（ve8）
+* Download the videos [here](https://drive.google.com/drive/u/1/folders/0B5peJ1MHnIWGd3pFbzMyTG5BSGs).(offical)
+* video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
+
+### model
+* pre=trained model download [here]
+* trained model download [here]
 
 ## Running the code
 Assume the strcture of data directories is the following:
 ```misc
 ~/
-  VideoEmotion8--imgs
-    .../ (directories of class names)
-      .../ (directories of video names)
-        .../ (jpg files)
-  VideoEmotion8--mp3
-    .../ (directories of class names)
-      .../ (mp3 files)
+  data
+    Joy/
+      .../(video name)
+        images/(jpg files)
+        mp3/
+          mp3/(mp3 file)
   results
+  resnet-101-kinetics.pth
+  save_30.pth
   ve8_01.json
+  
 ```
 
 Confirm all options in ```~/opts.py```.
 ```bash
-python main.py
+python Emotion.py
 ```
