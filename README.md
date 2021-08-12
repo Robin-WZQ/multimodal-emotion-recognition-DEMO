@@ -1,11 +1,11 @@
 # multimodel-emotion-recongnition-DEMO
 A demo for multimodel emotion recongnition
+*code is in the branch master*
 
 ## Overview
 
 多模态情感识别demo version1.0. 
 
-*代码详见master分支*
 
 功能：
 
