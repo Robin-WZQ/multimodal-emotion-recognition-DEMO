@@ -1,4 +1,4 @@
-# An End-to-End Visual-Audio Attention Network for Emotion Recognition DMOE
+# An End-to-End Visual-Audio Attention Network for Emotion Recognition DEMO
 
 <!-- ### [Project Page](https://github.com/maysonma/VAANet) | [Paper](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364)
 
