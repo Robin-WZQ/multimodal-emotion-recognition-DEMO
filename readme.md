@@ -64,6 +64,7 @@ Confirm all options in ```~/opts.py```.
 ```bash
 python Emotion.py
 ```
-##Tutorial
+
+## Tutorial
 See another branch --main
 (Chinese version)
