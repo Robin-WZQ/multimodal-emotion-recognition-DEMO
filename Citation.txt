@@ -1,0 +1,8 @@
+Most code come from https://github.com/maysonny/VAANet/tree/master.
+
+@inproceedings{Zhao2020AnEV,
+  title={An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos},
+  author={Sicheng Zhao and Yunsheng Ma and Yang Gu and Jufeng Yang and Tengfei Xing and Pengfei Xu and Runbo Hu and Hua Chai and Kurt Keutzer},
+  booktitle={AAAI},
+  year={2020}
+}
