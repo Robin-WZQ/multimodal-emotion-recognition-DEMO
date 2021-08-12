@@ -40,7 +40,7 @@ If you use this code, please cite the following:
 * video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
 
 ### model
-* pre=trained model download [here]
+* pre-trained model download [here]
 * trained model download [here]
 
 ## Running the code
