@@ -1,7 +1,7 @@
 # multimodel-emotion-recongnition-DEMO
 A demo for multimodel emotion recongnition
 
-### Overview
+## Overview
 
 多模态情感识别demo version1.0. 代码详见master分支
 
@@ -12,14 +12,14 @@ A demo for multimodel emotion recongnition
 - 利用模型进行情感输出
 - 利用多线程进行任务并行处理
 
-### Requirements
+## Requirements
 
 - python3.x
 - pytorch (ver. 0.4+ required)
 - ffmepg
 - AVL 视频解码器
 
-### Usage
+## Usage
 
 1. 修改opts.py文件中一处目录，为Emotion_REC所在绝对路径，已进行注释。
 2. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
@@ -33,7 +33,7 @@ A demo for multimodel emotion recongnition
 7.结果显示
 ![图片4-16285544674893](https://user-images.githubusercontent.com/60317828/128882740-79498389-faf3-4d77-93c0-641a7df70839.png)
 
-### future Plan
+## future Plan
 
 - [ ] 完成本地视频实时切片并进行情感识别
 - [ ] 利用软件进行音频和视频的录制
