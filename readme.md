@@ -66,5 +66,6 @@ python Emotion.py
 ```
 
 ## Tutorial
-See another branch --main
+See another branch [--main](https://github.com/Robin-WZQ/multimodel-emotion-recongnition-DEMO/tree/main)
+
 (Chinese version)
