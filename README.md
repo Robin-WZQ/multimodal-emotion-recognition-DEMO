@@ -26,7 +26,7 @@ A demo for multimodel emotion recongnition
 
 1. 修改opts.py文件中一处目录，为Emotion_REC所在绝对路径，已进行注释。
 2. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
-3. 安装AVL视频解码器，可执行文件已放在压缩文件中（LAVFilters-0.73.1.exe），默认安装即可
+3. 安装AVL视频解码器，默认安装即可
 4. python Emotion.py
 ![image-20210810080104442-16285536672481](https://user-images.githubusercontent.com/60317828/128882555-0140237b-62a7-42c5-868f-2ebb5ef8f487.png)
 5.选择本地视频
