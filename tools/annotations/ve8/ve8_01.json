@@ -1,0 +1,1 @@
+{"labels": ["Anger", "Anticipation", "Disgust", "Fear", "Joy", "Sadness", "Surprise", "Trust"], "database": {"TheBestSurpriseMilitaryHomecomings-PARTTHREE": {"subset": "training", "annotations": {"label": "Surprise"}}, "images": {"subset": "validation", "annotations": {"label": "Joy"}}}}
