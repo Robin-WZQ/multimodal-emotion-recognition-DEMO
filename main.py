@@ -60,8 +60,8 @@ def main(name):
         checkpoint = torch.load(log_dir,map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint['state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer'])
-        result = test(1, val_loader, model, criterion, opt, writer, optimizer)
-        return result
+        result,result2 = test(1, val_loader, model, criterion, opt, writer, optimizer)
+        return result,result2
 
     writer.close()
 
@@ -70,8 +70,8 @@ def output_result(path):
     name = processing.video(path)
 
 def results(name):
-    result1 = main(name)
-    return result1
+    result1,result2 = main(name)
+    return result1,result2
 
 #这里给我路径,只要调用这个函数就可以了，返回的是情感结果
 #output_result("D:/research/大创/project/emotion/多模态情感识别/Emotion_rec/4dac1f7abf38e1887e3cf70b1516beaa.mp4")
