@@ -65,6 +65,10 @@ Confirm all options in ```~/opts.py```.
 python Emotion.py
 ```
 
+## Result
+![图片2](https://user-images.githubusercontent.com/60317828/129351229-7cebb23c-c1dc-4c94-a84f-b0b3394573af.png)
+See the next section for details.
+
 ## Tutorial
 See another branch [--Tutorial](https://github.com/Robin-WZQ/multimodel-emotion-recongnition-DEMO/tree/main)
  
