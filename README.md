@@ -21,6 +21,7 @@ A demo for multimodel emotion recongnition
 - pytorch (ver. 0.4+ required)
 - ffmepg
 - AVL 视频解码器
+- opencv
 
 ## Usage
 
@@ -32,9 +33,9 @@ A demo for multimodel emotion recongnition
 5.选择本地视频
 ![图片3](https://user-images.githubusercontent.com/60317828/128882596-c6638676-59fb-4753-8ce2-6bcec04a6cde.png)
 6.视频播放+后台处理
-![图片2](https://user-images.githubusercontent.com/60317828/128882666-f6289f69-2681-452e-a90d-3d1ea14d6931.png)
+![图片1](https://user-images.githubusercontent.com/60317828/129351022-94c60390-bf76-4c94-8ebc-855f53afc0f4.png)
 7.结果显示
-![图片4-16285544674893](https://user-images.githubusercontent.com/60317828/128882740-79498389-faf3-4d77-93c0-641a7df70839.png)
+![图片2](https://user-images.githubusercontent.com/60317828/129351038-eea10c29-0ce9-4132-b01b-dca1df7d2b7c.png)
 
 ## future Plan
 
