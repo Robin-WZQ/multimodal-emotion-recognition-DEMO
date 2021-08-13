@@ -57,7 +57,7 @@ class Ui_MainWindow(QMainWindow):
         self.player.setVideoOutput(self.wgt_video)  # 视频播放输出的widget，就是上面定义的
 
     #    self.player.positionChanged.connect(self.changeSlide)  #进度条
-    #    self.timePlay = ' '
+        self.timePlay = ' '
 
         # 配置日志文件和日志级别
         """currentTime = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
@@ -319,12 +319,9 @@ class Ui_MainWindow(QMainWindow):
 
         
         tsk = []
-        #result=output_result(y)
-        #在这里加上个分析调用  result=
         self.player.setMedia(QMediaContent(x))  # 选取视频文件
         t1 = Thread(target=output_result, args=(y,))
         t1.start()
-        #self.player.play()  # 播放视频
         tsk.append(t1)
         t2 = Thread(target=self.player.play())
         t2.start()
@@ -332,13 +329,38 @@ class Ui_MainWindow(QMainWindow):
         for tt in tsk:
             tt.join()
         #以上使用了多线程，并且设置为子线程结束后主线程才进行
-        result = results(name)
+        result,preds = results(name)
+        print(result)
+        
+        ############################################################################
+        ####################
+        tmp = open('slice.png', 'wb')
+        tmp.write(b64decode(bgImg))
+        tmp.close()
+        canvas = cv2.imread('slice.png')  # 用于数据显示的背景图片
+
+        EMOTIONS = ["Anger", "Anticipation", "Disgust", "Fear", "Joy", "Sadness", "Surprise", "Trust"]
+
+        label = None  # 预测的标签
+        for (i, (emotion, prob)) in enumerate(zip(EMOTIONS, preds)):
+            # 用于显示各类别概率
+            text = "{}: {:.2f}%".format(emotion, prob * 100)
+            # 绘制表情类和对应概率的条形图
+            w = int(prob * 300) + 7
+            cv2.rectangle(canvas, (7, (i * 30) + 5), (w, (i * 30) + 30), (224, 200, 130), -1)
+            cv2.putText(canvas, text, (10, (i * 30) + 23), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0, 0, 0), 1)
+        # 在显示结果的label中显示结果
+        cv2.imwrite('new.png',canvas)
+        self.label_outputResult.clear()
+        self.label_outputResult.setStyleSheet("border-image: url(new.png);")
+        #*************************************************
+        preds = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.3]  # 预测的结果
+        ###############################################################################################
+
         #if self.player.duration() > 0:  # 开始播放后才允许打开摄像头
         #self.button_open_camera_click()
-        #result = results()
-        print("Emotion:",result)
         self.label_scanResult.setText(result)
-   
+
    
     #播放视频
     def button_play(self):
@@ -416,7 +438,7 @@ class Ui_MainWindow(QMainWindow):
         #self.logFile = '[' + self.timePlay + ']' + str(self.emotion_model.preds)
         #logging.info(self.logFile)
         # 在界面显示结果
-        self.label_scanResult.setText("joy")
+        #self.label_scanResult.setText(result)
 
 
 if __name__ == "__main__":  
