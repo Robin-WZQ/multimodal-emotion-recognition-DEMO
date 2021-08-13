@@ -19,21 +19,22 @@ from os import getcwd
 import numpy as np
 import cv2
 import time
-import sys
 import logging
 from base64 import b64decode
 from os import remove
 from slice_png import img as bgImg
 import image1_rc
-#from PyQt5.QtWidgets import QApplication,QMainWindowp;
+from PyQt5.QtWidgets import QApplication,QMainWindow;
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from myVideoWidget import myVideoWidget
+import dlib
 
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from main import *
+from face_detect import show_face
 import time
 class Ui_MainWindow(QMainWindow):
     def __init__(self,MainWindow):
@@ -313,24 +314,31 @@ class Ui_MainWindow(QMainWindow):
         y=xx[27:-2]
         y=str(y)
         print(y)
+        tsk = []
+        show_face(y)
+        gif.stop()
+        self.label_face.clear()
         name = y.split('/')
         name = name[-1].split(".")
         name = name[0]
-
-        
-        tsk = []
+ 
         self.player.setMedia(QMediaContent(x))  # 选取视频文件
+
+        t3 = Thread(target = self.label_face.setStyleSheet("border-image: url(detected.png);"))
         t1 = Thread(target=output_result, args=(y,))
-        t1.start()
         tsk.append(t1)
+        tsk.append(t3)        
         t2 = Thread(target=self.player.play())
-        t2.start()
         tsk.append(t2)
+
+        t1.start()
+        t2.start()
+        t3.start()
         for tt in tsk:
             tt.join()
         #以上使用了多线程，并且设置为子线程结束后主线程才进行
         result,preds = results(name)
-        print(result)
+        print("Emotion:",result)
         
         ############################################################################
         ####################
