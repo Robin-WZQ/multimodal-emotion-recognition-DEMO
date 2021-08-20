@@ -15,6 +15,14 @@ A demo for multimodel emotion recongnition
 - 利用模型进行情感输出
 - 利用多线程进行任务并行处理
 
+多模态情感识别demo version2.0.
+
+功能：
+
+- 增加实时情感识别功能模块
+- 利用多线程进一步解决并行运算问题
+- 模型处理后可显示8种情感概率分布情况
+
 ## Requirements
 
 - python3.x
