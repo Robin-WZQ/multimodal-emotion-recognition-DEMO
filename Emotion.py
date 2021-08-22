@@ -26,6 +26,7 @@ from slice_png import img as bgImg
 import image1_rc
 from PyQt5.QtWidgets import QApplication,QMainWindow;
 from PyQt5.QtMultimediaWidgets import QVideoWidget
+from PyQt5.QtCore import QUrl
 from myVideoWidget import myVideoWidget
 import dlib
 
@@ -34,6 +35,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from main import *
+from Video_main import *
 from face_detect import show_face
 import time
 class Ui_MainWindow(QMainWindow):
@@ -180,6 +182,10 @@ class Ui_MainWindow(QMainWindow):
         self.label_face.setStyleSheet("border-image: url(:/newPrefix/images_test/scan.gif);")
         self.label_face.setObjectName("label_face")
 
+        self.pushButton_record = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_record.setGeometry(QtCore.QRect(80, 740, 113, 51))
+        self.pushButton_record.setObjectName("pushButton_openfile")
+
         self.pushButton_openfile = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_openfile.setGeometry(QtCore.QRect(240, 740, 113, 51))
         self.pushButton_openfile.setObjectName("pushButton_openfile")
@@ -268,6 +274,7 @@ class Ui_MainWindow(QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Emotion Recongnition v1.0"))
+        self.pushButton_record.setText(_translate("MainWindow", "录像并处理"))
         self.pushButton_openfile.setText(_translate("MainWindow", "选择文件"))
         self.pushButton_play.setText(_translate("MainWindow", "播放"))
         self.pushButton_op.setText(_translate("MainWindow", "实时"))#自己加的
@@ -282,6 +289,7 @@ class Ui_MainWindow(QMainWindow):
     #定义槽函数
     def slot_init(self):
         self.pushButton_openfile.clicked.connect(self.button_openfile)
+        self.pushButton_record.clicked.connect(self.button_record)
         #self.pushButton_openfile.clicked.connect(self.button_open_camera_click)#原来有
         self.pushButton_op.clicked.connect(self.button_open_camera_click)#后加的
         self.pushButton_play.clicked.connect(self.button_play)
@@ -290,7 +298,7 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_close.clicked.connect(QCoreApplication.quit)
         self.timer_camera.timeout.connect(self.show_camera)
 
-    def main_function(self,x):
+    def aaa(self,x):
         xx=str(x)
         y=xx[27:-2]
         y=str(y)
@@ -305,16 +313,13 @@ class Ui_MainWindow(QMainWindow):
         name = name[0]
 
         self.player.setMedia(QMediaContent(x)) 
-        #t3 = Thread()
         t1 = Thread(target=output_result, args=(y,))
         tsk.append(t1)
-        #tsk.append(t3)
         t2 = Thread(target=self.player.play())
         tsk.append(t2)
 
         t1.start()
         t2.start()
-        #t3.start()
         for tt in tsk:
             tt.join()
         #以上使用了多线程，并且设置为子线程结束后主线程才进行
@@ -373,10 +378,78 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_close.setEnabled(True)
         
         x=QtWidgets.QFileDialog.getOpenFileUrl()[0]
-        t1 = Thread(target=self.main_function,args=(x,))
+        t1 = Thread(target=self.aaa,args=(x,))
         t1.start()
+    
+    def bbb(self,x,name):
+        tsk = []
+        self.player.setMedia(QMediaContent(x))
+
+        t2 = Thread(target=self.player.play())
+        tsk.append(t2)
+        t2.start()
+        for tt in tsk:
+            tt.join()
         
+        result,preds = results(name)
+        print("Emotion:",result)
+
+        ############################################################################
+        ####################
+        tmp = open('slice.png', 'wb')
+        tmp.write(b64decode(bgImg))
+        tmp.close()
+        canvas = cv2.imread('slice.png')  # 用于数据显示的背景图片
+
+        EMOTIONS = ["Anger", "Anticipation", "Disgust", "Fear", "Joy", "Sadness", "Surprise", "Trust"]
+
+        label = None  # 预测的标签
+        for (i, (emotion, prob)) in enumerate(zip(EMOTIONS, preds)):
+            # 用于显示各类别概率
+            text = "{}: {:.2f}%".format(emotion, prob * 100)
+            # 绘制表情类和对应概率的条形图
+            w = int(prob * 300) + 7
+            cv2.rectangle(canvas, (7, (i * 30) + 5), (w, (i * 30) + 30), (224, 200, 130), -1)
+            cv2.putText(canvas, text, (10, (i * 30) + 23), cv2.FONT_HERSHEY_DUPLEX, 0.6, (0, 0, 0), 1)
+        # 在显示结果的label中显示结果
+        cv2.imwrite('new.png',canvas)
+        self.label_outputResult.clear()
+        self.label_outputResult.setStyleSheet("border-image: url(new.png);")
+        #*************************************************
+        preds = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.3]  # 预测的结果
+        ###############################################################################################
+
+        #if self.player.duration() > 0:  # 开始播放后才允许打开摄像头
+        #self.button_open_camera_click()
+        self.label_scanResult.setText(result)
+        
+    def button_record(self):
+        self.timer_camera.stop()
  
+        self.cap.release()
+        self.label_face.clear()
+        #gif = QMovie(':/newPrefix/images_test/scan.gif')
+        #self.label_face.setMovie(gif)
+        #gif.start()
+
+
+        self.label_outputResult.setStyleSheet("border-image: url(:/newPrefix/images_test/ini.png);")
+        self.label_scanResult.setText('process...')
+        #
+
+        self.pushButton_play.setEnabled(False)
+        self.pushButton_pause.setEnabled(True)
+        self.pushButton_close.setEnabled(True)
+
+
+        name = video_record()
+        path = "D:/research/dachuang/project/emotion/muti-modal emotion recognition/Emotion_rec/"+name+".mp4"
+        show_face(path)
+        self.label_face.setStyleSheet("border-image: url(detected.png);")
+        x = QUrl.fromLocalFile(path)
+        t = Thread(target=self.bbb,args=(x,name,))
+        t.start()
+
    
     #播放视频
     def button_play(self):
@@ -462,7 +535,4 @@ if __name__ == "__main__":
     form = QMainWindow()
     w = Ui_MainWindow(form)
     form.show()
-
-    #w.setupUi(form)
-
     sys.exit(app.exec_())
