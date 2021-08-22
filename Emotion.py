@@ -40,7 +40,7 @@ class Ui_MainWindow(QMainWindow):
     def __init__(self,MainWindow):
         super(Ui_MainWindow, self).__init__()
         self.path = getcwd()
-        self.timer_camera = QtCore.QTimer() # 定时器
+        self.timer_camera = QtCore.QTimer(self) # 定时器
 
         self.setupUi(MainWindow)
         self.retranslateUi(MainWindow)
@@ -241,7 +241,7 @@ class Ui_MainWindow(QMainWindow):
         self.label.setFont(font)
         self.label.setObjectName("label")
 
-        
+
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         self.line_2.setGeometry(QtCore.QRect(1090, 330, 421, 16))
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
@@ -252,7 +252,7 @@ class Ui_MainWindow(QMainWindow):
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
-        
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1544, 22))
@@ -290,56 +290,37 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_close.clicked.connect(QCoreApplication.quit)
         self.timer_camera.timeout.connect(self.show_camera)
 
-    #选择文件路径
-    def button_openfile(self):
-
-        #后加的，从实时转到播放
-        self.timer_camera.stop()
-        self.cap.release()
-        self.label_face.clear()
-        gif = QMovie(':/newPrefix/images_test/scan.gif')
-        self.label_face.setMovie(gif)
-        gif.start()
-        self.label_outputResult.clear()
-        self.label_outputResult.setStyleSheet("border-image: url(:/newPrefix/images_test/ini.png);")
-        self.label_scanResult.setText('process...')
-        #
-
-
-        self.pushButton_play.setEnabled(False)
-        self.pushButton_pause.setEnabled(True)
-        self.pushButton_close.setEnabled(True)
-        x=QFileDialog.getOpenFileUrl()[0]
+    def main_function(self,x):
         xx=str(x)
         y=xx[27:-2]
         y=str(y)
         print(y)
         tsk = []
         show_face(y)
-        gif.stop()
-        self.label_face.clear()
+        self.label_face.setStyleSheet("border-image: url(detected.png);")
+        #gif.stop()
+        #self.label_face.clear()
         name = y.split('/')
         name = name[-1].split(".")
         name = name[0]
- 
-        self.player.setMedia(QMediaContent(x))  # 选取视频文件
 
-        t3 = Thread(target = self.label_face.setStyleSheet("border-image: url(detected.png);"))
+        self.player.setMedia(QMediaContent(x)) 
+        #t3 = Thread()
         t1 = Thread(target=output_result, args=(y,))
         tsk.append(t1)
-        tsk.append(t3)        
+        #tsk.append(t3)
         t2 = Thread(target=self.player.play())
         tsk.append(t2)
 
         t1.start()
         t2.start()
-        t3.start()
+        #t3.start()
         for tt in tsk:
             tt.join()
         #以上使用了多线程，并且设置为子线程结束后主线程才进行
         result,preds = results(name)
         print("Emotion:",result)
-        
+
         ############################################################################
         ####################
         tmp = open('slice.png', 'wb')
@@ -369,6 +350,33 @@ class Ui_MainWindow(QMainWindow):
         #self.button_open_camera_click()
         self.label_scanResult.setText(result)
 
+
+    #选择文件路径
+    def button_openfile(self):
+        #后加的，从实时转到播放
+
+        self.timer_camera.stop()
+ 
+        self.cap.release()
+        self.label_face.clear()
+        #gif = QMovie(':/newPrefix/images_test/scan.gif')
+        #self.label_face.setMovie(gif)
+        #gif.start()
+
+
+        self.label_outputResult.setStyleSheet("border-image: url(:/newPrefix/images_test/ini.png);")
+        self.label_scanResult.setText('process...')
+        #
+
+        self.pushButton_play.setEnabled(False)
+        self.pushButton_pause.setEnabled(True)
+        self.pushButton_close.setEnabled(True)
+        
+        x=QtWidgets.QFileDialog.getOpenFileUrl()[0]
+        t1 = Thread(target=self.main_function,args=(x,))
+        t1.start()
+        
+ 
    
     #播放视频
     def button_play(self):
