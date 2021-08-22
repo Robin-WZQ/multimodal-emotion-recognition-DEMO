@@ -15,16 +15,6 @@ Kurt Keutzer<br>
 
 This is the demo implementation of the paper ["An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos"](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364). [NOT OFFICIAL!!]
 
-## Citation 
-
-If you use this code, please cite the following:
-```bibtex
-@inproceedings{Robin-WZQ,
-  title={An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos DEMO},
-  author={Wang zhongqi, Wang Jianan,Li Tong},
-  year={2021}
-}
-```
 
 ## Requirements
 * [PyTorch](http://pytorch.org/) (ver. 0.4+ required)
