@@ -30,8 +30,8 @@ This is the demo implementation of the paper ["An End-to-End Visual-Audio Attent
 * video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
 
 ### model
-* pre-trained model download [here]
-* trained model download [here]
+* pre-trained model download [here](https://pan.baidu.com/s/1gi01VMev8WWwMGihdbI-Ow) (extraction code:0bi8)
+* trained model download [here](https://pan.baidu.com/s/1qJGtjTwh3D90uUZCh0D5Jw) (extraction code:uq82)
 
 ## Running the code
 Assume the strcture of data directories is the following:
