@@ -1,4 +1,3 @@
-
 """
     使用python实现：读取USB摄像头的画面
 """
@@ -40,7 +39,7 @@ def video_record():
     os.system("start cmd_.vbe") #启动录音
     read_usb_capture() # 启动摄像
     name = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')  # 当前的时间
-    os.system("ffmpeg -i temp.mp4 -i temp.wav -strict -2 -f mp4 " + name + ".mp4")  # 利用ffmpe 进行合并
+    os.system("ffmpeg -i temp.mp4 -i temp.wav -strict -2 -f mp4 " + name + ".mp4")  # 利用ffmpeg 进行合并
     video2jpg(name+".mp4",name)
     video2mp3(name+".mp4",name)
     n_frame(name)
