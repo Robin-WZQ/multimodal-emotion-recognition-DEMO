@@ -28,7 +28,6 @@ class Emotion_Rec:
                          "neutral"]
 
 
-
     def run(self, frame_in, canvas, label_face, label_result):
         # frame_in 摄像画面或图像
         # canvas 用于显示的背景图
