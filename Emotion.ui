@@ -17,10 +17,10 @@
    <widget class="QLabel" name="label_camera">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>1100</x>
       <y>10</y>
-      <width>1051</width>
-      <height>631</height>
+      <width>401</width>
+      <height>301</height>
      </rect>
     </property>
     <property name="text">
@@ -33,10 +33,10 @@
    <widget class="QLabel" name="label_face">
     <property name="geometry">
      <rect>
-      <x>1100</x>
+      <x>10</x>
       <y>10</y>
-      <width>401</width>
-      <height>301</height>
+      <width>1051</width>
+      <height>631</height>
      </rect>
     </property>
     <property name="text">
