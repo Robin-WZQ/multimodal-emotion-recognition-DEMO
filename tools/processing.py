@@ -82,6 +82,11 @@ def rewrite_josn(name):
     #f.write(name+"/images")
     f.write("Joy/images")
 
+def n_frame_fix(name):
+    dir_path = "data/Joy"+"/"+name+"/images/"
+    with open(os.path.join(dir_path, 'n_frames'), 'w+') as dst_file:
+        dst_file.write(str(8))
+
 def video(path):
     name = path.split('/')
     name = name[-1].split(".")
