@@ -60,6 +60,6 @@ python Emotion.py
 See the next section for details.
 
 ## Tutorial
-See another branch [--Tutorial](https://github.com/Robin-WZQ/multimodel-emotion-recongnition-DEMO/tree/main)
+To see another branch:click here [--Tutorial](https://github.com/Robin-WZQ/multimodel-emotion-recongnition-DEMO/tree/main)
  
 (Chinese version)
