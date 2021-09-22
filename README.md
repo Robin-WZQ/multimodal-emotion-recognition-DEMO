@@ -47,7 +47,11 @@ A demo for multimodel emotion recongnition
 4. python Emotion.py
 ![图片0](https://user-images.githubusercontent.com/60317828/134369543-15611f73-03a4-4a00-add4-b529955d35e6.jpg)
 5.选择本地视频
+![图片1](https://user-images.githubusercontent.com/60317828/134369887-3e9212ae-723f-41d8-a1c9-ebef7874c65b.png)
+![图片2](https://user-images.githubusercontent.com/60317828/134369921-947a7797-f454-4484-b218-cca9216842ee.png)
 6.录像检测
+![Uploading 图片3.png…]()
+![Uploading 图片4.png…]()
 7.实时检测
 ![图片5](https://user-images.githubusercontent.com/60317828/134369696-cf82d10e-ee32-4eaa-8cbf-bb5c2a858d65.png)
 
