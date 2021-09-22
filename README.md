@@ -50,8 +50,7 @@ A demo for multimodel emotion recongnition
 ![图片1](https://user-images.githubusercontent.com/60317828/134369887-3e9212ae-723f-41d8-a1c9-ebef7874c65b.png)
 ![图片2](https://user-images.githubusercontent.com/60317828/134369921-947a7797-f454-4484-b218-cca9216842ee.png)
 6.录像检测
-![Uploading 图片3.png…]()
-![Uploading 图片4.png…]()
+![图片3](https://user-images.githubusercontent.com/60317828/134370931-04773e1b-aad5-4335-a7df-5ee841b535cc.jpg)
 7.实时检测
 ![图片5](https://user-images.githubusercontent.com/60317828/134369696-cf82d10e-ee32-4eaa-8cbf-bb5c2a858d65.png)
 
@@ -65,3 +64,4 @@ A demo for multimodel emotion recongnition
 
 已完成！Done！
 （congratulations！）
+![图片4](https://user-images.githubusercontent.com/60317828/134371121-57d12ea4-d492-4975-b871-b7116487b5bd.png)
