@@ -45,13 +45,11 @@ A demo for multimodel emotion recongnition
 2. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
 3. 安装AVL视频解码器，默认安装即可
 4. python Emotion.py
-![image-20210810080104442-16285536672481](https://user-images.githubusercontent.com/60317828/128882555-0140237b-62a7-42c5-868f-2ebb5ef8f487.png)
+![图片0](https://user-images.githubusercontent.com/60317828/134369543-15611f73-03a4-4a00-add4-b529955d35e6.jpg)
 5.选择本地视频
-![图片3](https://user-images.githubusercontent.com/60317828/128882596-c6638676-59fb-4753-8ce2-6bcec04a6cde.png)
-6.视频播放+后台处理
-![图片1](https://user-images.githubusercontent.com/60317828/129351022-94c60390-bf76-4c94-8ebc-855f53afc0f4.png)
-7.结果显示
-![图片2](https://user-images.githubusercontent.com/60317828/129351038-eea10c29-0ce9-4132-b01b-dca1df7d2b7c.png)
+6.录像检测
+7.实时检测
+![图片5](https://user-images.githubusercontent.com/60317828/134369696-cf82d10e-ee32-4eaa-8cbf-bb5c2a858d65.png)
 
 ## future Plan
 
