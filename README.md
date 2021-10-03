@@ -1,7 +1,7 @@
 # multimodel-emotion-recongnition-DEMO
 A demo for multimodel emotion recongnition
 
-*code is in the branch verion2.0*
+*code is in the branch verion3.0*
 
 ## Overview
 
