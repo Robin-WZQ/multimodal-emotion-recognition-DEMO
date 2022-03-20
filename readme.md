@@ -22,8 +22,9 @@ This is the demo implementation of the paper ["An End-to-End Visual-Audio Attent
 * video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
 
 ### model
-* pre-trained model download [here](https://pan.baidu.com/s/1gi01VMev8WWwMGihdbI-Ow) (extraction code:0bi8)
-* trained model download [here](https://pan.baidu.com/s/1qJGtjTwh3D90uUZCh0D5Jw) (extraction code:uq82)
+* resnet-101-kinetics.pth:  pre-trained model download [here](https://pan.baidu.com/s/1gi01VMev8WWwMGihdbI-Ow) (extraction code:0bi8)
+* save_30.pth:  trained model download [here](https://pan.baidu.com/s/1qJGtjTwh3D90uUZCh0D5Jw) (extraction code:uq82)
+* ve8_01.json: download[here](https://pan.baidu.com/s/1mjCgxD82J4ORn5BtzZOqcA) (extraction code:s567)
 
 ## Running the code
 Assume the strcture of data directories is the following:
