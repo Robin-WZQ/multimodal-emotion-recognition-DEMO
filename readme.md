@@ -1,19 +1,10 @@
 # An End-to-End Visual-Audio Attention Network for Emotion Recognition DEMO
 
-<!-- ### [Project Page](https://github.com/maysonma/VAANet) | [Paper](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364)
 
-Sicheng Zhao\*,
-Yunsheng Ma\*,
-Yang Gu,
-Jufeng Yang,
-Tengfei Xing,
-Pengfei Xu,
-Runbo Hu,
-Hua Chai,
-Kurt Keutzer<br>
-\*denotes equal contribution -->
 
 This is the demo implementation of the paper ["An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos"](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364). [NOT OFFICIAL!!]
+
+[Original Paper Project Page](https://github.com/maysonma/VAANet) | [Paper](https://www.aiide.org/ojs/index.php/AAAI/article/view/5364)
 
 
 ## Requirements
@@ -26,6 +17,7 @@ This is the demo implementation of the paper ["An End-to-End Visual-Audio Attent
 ## Preparation
 
 ### data（ve8）
+* If U just want to use the DEMO, this step is not necessary. Download the pre-trained and trained model is enough.
 * Download the videos [here](https://drive.google.com/drive/u/1/folders/0B5peJ1MHnIWGd3pFbzMyTG5BSGs).(offical)
 * video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
 
