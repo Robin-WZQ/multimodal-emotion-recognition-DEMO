@@ -21,7 +21,7 @@ If U just want to use the DEMO, this step is not necessary. Download the pre-tra
 
 * Download the videos [here](https://drive.google.com/drive/u/1/folders/0B5peJ1MHnIWGd3pFbzMyTG5BSGs).(offical)
 * video pre-processing using ``` /tools/processing.py```(mp4 to jpg+ Add n_frames information + Generate annotation file in json format + mp4 to mp3)
-* Here, We provide the processed dataset, including VideoEmotion8-imgs(splited by FFmpeg) and VideoEmotion8-videos, so that you can train your own model easier.
+* Here, We provide the processed dataset, including VideoEmotion8-imgs(splitted by FFmpeg) and VideoEmotion8-videos, so that you can train your own model easier.
 
 VideoEmotion8-imgs: [here](https://pan.baidu.com/s/1NjgHAfcIKJlCVUey07XIcg) (extraction code: fhom)
 
