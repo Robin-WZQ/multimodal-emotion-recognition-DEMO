@@ -22,6 +22,7 @@ If you use this code, please cite the following:
 @inproceedings{Robin-WZQ,
   title={An End-to-End Visual-Audio Attention Network for Emotion Recognition in User-Generated Videos DEMO},
   author={Wang zhongqi, Wang Jianan,Li Tong},
+  url={https://github.com/Robin-WZQ/multimodal-emotion-recognition-DEMO}
   year={2021}
 }
 ```
