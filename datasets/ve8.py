@@ -174,7 +174,7 @@ def make_dataset(video_root_path, annotation_path, audio_root_path, subset, fps=
         video = video_names[i].split("/")
         video = video[1]
         if need_audio:
-            audio_path = os.path.join(audio_root_path, "Joy" + '.mp3')
+            audio_path = os.path.join(audio_root_path, "output1" + '.mp3')
         else:
             audio_path = None
 
