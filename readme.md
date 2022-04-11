@@ -11,7 +11,6 @@ This is the demo implementation of the paper ["An End-to-End Visual-Audio Attent
 * [PyTorch](http://pytorch.org/) (ver. 0.4+ required)
 * FFmpeg
 * Python3
-* AVL
 * Pyqt5
 
 ## Preparation
