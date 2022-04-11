@@ -36,6 +36,7 @@ A demo for multimodel emotion recongnition
 - python3.x
 - pytorch (ver. 0.4+ required)
 - ffmepg
+- pyqt5
 - pyaudio等
 - opencv
 
