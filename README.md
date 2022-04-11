@@ -40,19 +40,18 @@ A demo for multimodel emotion recongnition
 - opencv
 
 ## Usage
-
-1. 修改opts.py文件中一处目录，为整个模型所在的绝对路径就行，已进行注释。
-2. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
-3. 安装AVL视频解码器，默认安装即可
-4. python Emotion.py
+--------------------------------------------2022.4.11更新-------------------------------------------------
+1. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
+2. 由于github上的代码有些小问题，我将所有文件，包含所有预训练文件等，都打包到了百度云：[HERE](https://pan.baidu.com/s/1rkLb3C_gqcaiC_4S2y6kxA)，提取码：3oqv。其中我写了一个使用说明文档，理论上讲只要照做就能正常运行（我在另一台电脑上实验成功了）。
+3. python Emotion.py
 ![图片0](https://user-images.githubusercontent.com/60317828/134369543-15611f73-03a4-4a00-add4-b529955d35e6.jpg)
-5.选择本地视频
+4.选择本地视频
 ![图片1](https://user-images.githubusercontent.com/60317828/134369887-3e9212ae-723f-41d8-a1c9-ebef7874c65b.png)
 ![图片2](https://user-images.githubusercontent.com/60317828/134369921-947a7797-f454-4484-b218-cca9216842ee.png)
-6.录像检测
+5.录像检测
 ![图片3](https://user-images.githubusercontent.com/60317828/134370931-04773e1b-aad5-4335-a7df-5ee841b535cc.jpg)
 ![图片4](https://user-images.githubusercontent.com/60317828/134371121-57d12ea4-d492-4975-b871-b7116487b5bd.png)
-7.实时检测
+6.实时检测
 ![图片5](https://user-images.githubusercontent.com/60317828/134369696-cf82d10e-ee32-4eaa-8cbf-bb5c2a858d65.png)
 
 ## future Plan
