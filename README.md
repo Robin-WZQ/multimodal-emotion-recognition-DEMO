@@ -43,7 +43,7 @@ A demo for multimodel emotion recongnition
 ## Usage
 --------------------------------------------2022.4.11更新-------------------------------------------------
 1. 下载ffmepg，[参考链接](https://blog.csdn.net/qq_39516859/article/details/81843419)，注意若安装后仍无显示，可把路径放到用户变量再试试
-2. 感谢[BaBaman](https://github.com/Robin-WZQ/multimodal-emotion-recognition-DEMO/issues/4)，视频解码器下载参考：https://clay-atlas.com/blog/2019/11/11/python-chinese-directshowplayerservicedorender-unresolved-error-code-0x8040266-idisspatch-error-102/ （以在pyqt5中播放视频）
+2. 感谢[Peng-jpg](https://github.com/Robin-WZQ/multimodal-emotion-recognition-DEMO/issues/4)，视频解码器下载参考：https://clay-atlas.com/blog/2019/11/11/python-chinese-directshowplayerservicedorender-unresolved-error-code-0x8040266-idisspatch-error-102/ （以在pyqt5中播放视频）
 2. 由于github上的代码有些小问题，我将所有文件，包含所有预训练文件等，都打包到了百度云：[HERE](https://pan.baidu.com/s/1rkLb3C_gqcaiC_4S2y6kxA)，提取码：3oqv。其中我写了一个使用说明文档（视频解码器是必须的），理论上讲只要照做就能正常运行（我在另一台电脑上实验成功了）。
 3. python Emotion.py
 ![图片0](https://user-images.githubusercontent.com/60317828/134369543-15611f73-03a4-4a00-add4-b529955d35e6.jpg)
